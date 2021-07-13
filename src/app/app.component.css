@@ -16,3 +16,19 @@ search-bar {
     top: 1rem;
     left: 20rem;
 }
+
+table-content {
+    box-sizing: border-box;
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 75%;
+    left: 93%;
+    transform: translate(-93%, -75%);
+}
