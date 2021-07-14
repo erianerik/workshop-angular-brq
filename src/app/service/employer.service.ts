@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class EmployerService {
 
   public listEmployes: Employer[] = [];
-  private url: string = "http://localhost:3000/employers";
+  private url: string = "http://localhost:3000/employers/";
 
   constructor(
     private _http:HttpClient,
@@ -17,6 +17,10 @@ export class EmployerService {
 
   getEmployers():Observable<Employer[]> {
     return this._http.get<Employer[]>(this.url);
+  }
+
+  addEmployer(employer: Employer):Observable<Employer> {
+    return this._http.post<Employer>(this.url, employer);
   }
 
 }

@@ -5,35 +5,35 @@
 
     <fieldset class="register-employer__fieldset-input">
         <label for="" class="fieldset-input__name">Nome: </label>
-        <input type="text" name="employer-name" placeholder="Ex.: João Carlos" class="fieldset-input__data">
+        <input type="text" name="employer-name" placeholder="Ex.: João Carlos" class="fieldset-input__data" [(ngModel)]="employer.name">
         
         <label for="" class="fieldset-input__name">Email:</label>
-        <input type="email" name="employer-email" placeholder="Ex.: joaoCarlos@email.com" class="fieldset-input__data">
+        <input type="email" name="employer-email" placeholder="Ex.: joaoCarlos@email.com" class="fieldset-input__data" [(ngModel)]="employer.email">
         
         <label for="" class="fieldset-input__name">Cargo:</label>
-        <input type="text" name="employer-rule" placeholder="Ex.: Programador Junior" class="fieldset-input__data">
+        <input type="text" name="employer-rule" placeholder="Ex.: Programador Junior" class="fieldset-input__data" [(ngModel)]="employer.rule">
         
         <label for="" class="fieldset-input__name">Cordernador:</label>
-        <select name="" id="" class="fieldset-input__data">
+        <select name="employer-coordinator" id="" class="fieldset-input__data" [(ngModel)]="employer.coordinator" >
             <option selected disabled>Escolha um cordernador...</option>
-            <option>Marcio Vitor Melo</option>
-            <option>Edson Majimba</option>
-            <option>Carlos Minerva</option>
+            <option value="Marcio Vitor Melor">Marcio Vitor Melo</option>
+            <option value="Edson Ayabe">Edson Ayabe</option>
+            <option value="Carlos Minerva">Carlos Minerva</option>
         </select>
         
         <div class="fieldset-input__statis">
             <label for="" class="fieldset-input__name fieldset-input__name--status">Status</label>
             
-            <input type="radio" name="status" id="employer-no-active"  class="fieldset-input__radio" value="Ativo">
+            <input type="radio" name="status" id="employer-no-active"  class="fieldset-input__radio" [value]="false" [(ngModel)]="employer.status">
             <label class="input-radio__label" for="employer-no-active" >Não ativo</label>
             
-            <input type="radio" name="status" id="employer-active"  class="fieldset-input__radio" value="Desativado">
+            <input type="radio" name="status" id="employer-active"  class="fieldset-input__radio" [value]="true" [(ngModel)]="employer.status">
             <label class="input-radio__label" for="employer-active" >Ativo</label>
         </div>
 
         <fieldset class="fieldset-input__actions">
-            <a href="" class="button-pattern button-pattern--white-outline" (click)="addEmployerStatus()">Cancelar</a>
-            <a href="" class="button-pattern">Confirmar</a>
+            <a class="button-pattern button-pattern--white-outline" (click)="addEmployerStatus()">Cancelar</a>
+            <a class="button-pattern" (click)="registerEmployer()">Confirmar</a>
         </fieldset>
     </fieldset>
 
