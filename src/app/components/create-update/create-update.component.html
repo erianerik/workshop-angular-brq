@@ -1,0 +1,32 @@
+<form class="register-employer">
+    <fieldset class="register-employer__fieldset-title">
+        <h2>Cadastro de funcionário</h2>
+    </fieldset>
+
+    <fieldset class="register-employer__fieldset-input">
+        <label for="" class="fieldset-input__name">Nome: </label>
+        <input type="text" name="employer-name" placeholder="Ex.: João Carlos" class="fieldset-input__data">
+        
+        <label for="" class="fieldset-input__name">Email:</label>
+        <input type="email" name="employer-email" placeholder="Ex.: joaoCarlos@email.com" class="fieldset-input__data">
+        
+        <label for="" class="fieldset-input__name">Cargo:</label>
+        <input type="text" name="employer-rule" placeholder="Ex.: Programador Junior" class="fieldset-input__data">
+        
+        <div class="fieldset-input__statis">
+            <label for="" class="fieldset-input__name fieldset-input__name--status">Status</label>
+            
+            <input type="radio" name="status" id="employer-no-active"  class="fieldset-input__radio" value="Ativo">
+            <label class="input-radio__label" for="employer-no-active" >Não ativo</label>
+            
+            <input type="radio" name="status" id="employer-active"  class="fieldset-input__radio" value="Desativado">
+            <label class="input-radio__label" for="employer-active" >Ativo</label>
+        </div>
+
+        <fieldset class="fieldset-input__actions">
+            <a href="" class="button-pattern button-pattern--white-outline">Cancelar</a>
+            <a href="" class="button-pattern">Confirmar</a>
+        </fieldset>
+    </fieldset>
+
+</form>

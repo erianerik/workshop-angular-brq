@@ -1,5 +1,6 @@
 <main class="main-content">
   <menu></menu>
   <search-bar></search-bar>
-  <table-content></table-content>
+  <table-content *ngIf="!register" class="content"></table-content>
+  <create-update *ngIf="register" class="content"></create-update>
 </main>

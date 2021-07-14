@@ -17,7 +17,7 @@ search-bar {
     align-self: center;
 }
 
-table-content {
+.content {
     width: 95%;
     grid-area: 2 / 2 / 6 / 6;
     justify-self: center;
