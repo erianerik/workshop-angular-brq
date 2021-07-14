@@ -21,8 +21,10 @@
             <td>{{ employer.status == true ? 'Ativo' : 'Não ativo' }}</td>
             <td>
                 <a class="action-icon"><i class="far fa-edit"></i></a>
-                <a class="action-icon"><i class="far fa-trash-alt"></i></a>
+                <a class="action-icon" (click)="deleteEmployer(employer.id)"><i class="far fa-trash-alt"></i></a>
             </td>
         </tr>
     </tbody>
 </table>
+
+<confirmation-modal [hidden]="hiddenModal"></confirmation-modal>

@@ -11,6 +11,7 @@ import { Employer } from './../../model/employer';
 export class TableContentComponent implements OnInit {
 
   @Output() addEmployer = new EventEmitter; 
+  hiddenModal: boolean = true;
   employers:Employer[] = [];
 
   constructor(
@@ -19,10 +20,6 @@ export class TableContentComponent implements OnInit {
 
   ngOnInit(): void {  
     this.getEmployers();
-  }
-
-  registerEmployerActive() {
-    this.addEmployer.emit(true);
   }
 
   getEmployers():void {
@@ -35,5 +32,13 @@ export class TableContentComponent implements OnInit {
       });
     }
   } 
+  
+  registerEmployerActive() {
+    this.addEmployer.emit(true);
+  }
+
+  deleteEmployer(idEmployer?:number) {
+    this.hiddenModal = false;    
+  }
 
 }
