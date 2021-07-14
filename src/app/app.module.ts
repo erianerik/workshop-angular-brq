@@ -8,6 +8,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { TableContentComponent } from './components/table-content/table-content.component';
 import { CreateUpdateComponent } from './components/create-update/create-update.component';
 import { ConfirmationModalComponent } from './components/confirmation-modal/confirmation-modal.component';
+import { StatusModalComponent } from './components/status-modal/status-modal.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ConfirmationModalComponent } from './components/confirmation-modal/conf
     SearchBarComponent,
     TableContentComponent,
     CreateUpdateComponent,
-    ConfirmationModalComponent
+    ConfirmationModalComponent,
+    StatusModalComponent
   ],
   imports: [
     BrowserModule,
