@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'create-update',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateUpdateComponent implements OnInit {
 
+  @Output() addEmployer = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  addEmployerStatus() {
+    this.addEmployer.emit(false);
   }
 
 }

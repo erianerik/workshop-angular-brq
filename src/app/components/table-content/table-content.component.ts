@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'table-content',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableContentComponent implements OnInit {
 
+  @Output() addEmployer = new EventEmitter; 
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  registerEmployerActive() {
+    this.addEmployer.emit(true);
   }
 
 }

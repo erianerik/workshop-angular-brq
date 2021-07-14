@@ -1,6 +1,6 @@
 <main class="main-content">
   <menu></menu>
   <search-bar></search-bar>
-  <table-content *ngIf="!register" class="content"></table-content>
-  <create-update *ngIf="register" class="content"></create-update>
+  <table-content (addEmployer)="addEmployerStatus($event)" *ngIf="!registerStatus" class="content"></table-content>
+  <create-update  (addEmployer)="addEmployerStatus($event)" *ngIf="registerStatus" class="content"></create-update>
 </main>
