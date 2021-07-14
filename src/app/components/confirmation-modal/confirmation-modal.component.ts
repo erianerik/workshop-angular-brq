@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'confirmation-modal',
@@ -7,11 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfirmationModalComponent implements OnInit {
 
+  @Output() confirmStatus = new EventEmitter();
   modalText: string = "Você realmente deseja fazer essa operação?";
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  statusModal(actionStatus?: boolean) {
+    actionStatus == true ? this.confirmStatus.emit(true) : this.confirmStatus.emit(false);
   }
 
 }

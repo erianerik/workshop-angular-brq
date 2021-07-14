@@ -27,4 +27,4 @@
     </tbody>
 </table>
 
-<confirmation-modal [hidden]="hiddenModal"></confirmation-modal>
+<confirmation-modal [hidden]="hiddenModal" (confirmStatus)="confirmationStatus($event)"></confirmation-modal>

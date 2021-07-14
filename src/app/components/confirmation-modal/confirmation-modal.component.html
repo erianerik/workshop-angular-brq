@@ -4,7 +4,7 @@
         <p class="header__title">{{ modalText }}</p>
     </div>
     <div class="modal__action">
-      <a class="action__icon"><i class="fas fa-times"></i></a>
-      <a class="action__icon"><i class="fas fa-check"></i></a>
+      <a class="action__icon cancel" (click)="statusModal(false)"><i class="fas fa-times"></i></a>
+      <a class="action__icon true" (click)="statusModal(true)"><i class="fas fa-check"></i></a>
     </div>
 </div>
