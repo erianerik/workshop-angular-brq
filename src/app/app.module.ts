@@ -9,6 +9,8 @@ import { MenuComponent } from './components/menu/menu.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { TableContentComponent } from './components/table-content/table-content.component';
 import { CreateUpdateComponent } from './components/create-update/create-update.component';
+import { ConfirmationModalComponent } from './components/confirmation-modal/confirmation-modal.component';
+import { StatusModalComponent } from './components/status-modal/status-modal.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { CreateUpdateComponent } from './components/create-update/create-update.
     MenuComponent,
     SearchBarComponent,
     TableContentComponent,
-    CreateUpdateComponent
+    CreateUpdateComponent,
+    ConfirmationModalComponent,
+    StatusModalComponent
   ],
   imports: [
     BrowserModule,

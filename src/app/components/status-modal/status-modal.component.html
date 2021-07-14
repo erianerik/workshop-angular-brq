@@ -1,0 +1,11 @@
+<div class="modal-status">
+    <div *ngIf="!status" class="modal-status__container">
+        <i class="far fa-times-circle modal-status__icon modal-status__icon--false"></i>
+        <p class="container__status-text">Operação realizada com sucesso!</p>
+    </div>
+    
+    <div *ngIf="status" class="modal-status__container">
+        <i class="far fa-check-circle modal-status__icon modal-status__icon--true"></i>
+        <p class="container__status-text">Operação realizada com sucesso!</p>
+    </div>
+</div>
