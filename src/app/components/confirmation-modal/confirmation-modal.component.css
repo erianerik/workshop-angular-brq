@@ -11,7 +11,7 @@
     left: 68%;
     top: 40%;
     transform: translate(-68%, -40%);
-    animation: fade-in 2s ease;
+    animation: slide-down 1s ease;
 }
 
 .modal__header {
@@ -41,11 +41,15 @@
     background-color: #fff;
 }
 
-@keyframes fade-in {
-    to {
-        opacity: 1;
+@keyframes slide-down {
+    0% {
+        left: 68%;
+        top: 50%;
+        transform: translate(-68%, -50%);
     }
-    from {
-        opacity: .5;
+    100% {
+        left: 68%;
+        top: 40%;
+        transform: translate(-68%, -40%);
     }
 }

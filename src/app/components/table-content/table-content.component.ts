@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { SubjectSubscriber } from 'rxjs/internal/Subject';
 import { EmployerService } from 'src/app/service/employer.service';
 
@@ -12,6 +12,7 @@ import { Employer } from './../../model/employer';
 export class TableContentComponent implements OnInit {
 
   @Output() addEmployer = new EventEmitter; 
+  modalText?:string;
   hiddenModal: boolean = true;
   employers:Employer[] = [];
   idEmployer?: number = 0;
@@ -43,6 +44,7 @@ export class TableContentComponent implements OnInit {
   deleteEmployer(idEmployer?:number) {
     this.hiddenModal = false;    
     this.idEmployer = idEmployer;
+    this.modalText = "Você realmente deseja excluir esse funcionário?";
   }
 
   confirmationStatus(status?:boolean) {
@@ -50,7 +52,6 @@ export class TableContentComponent implements OnInit {
     if(status) {
       this._employerService.deleteEmployer(this.idEmployer).subscribe((response) => {
           this.employers = this._employerService.listEmployes;
-          console.log(this.employers);
       });
     }
    
