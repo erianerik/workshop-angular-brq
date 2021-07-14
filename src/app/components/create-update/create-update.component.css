@@ -32,6 +32,10 @@
     background-color: transparent;
 }
 
+.fieldset-input__data option {
+    color: #3f4347;
+}
+
 ::placeholder {
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
