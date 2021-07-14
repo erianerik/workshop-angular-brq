@@ -8,45 +8,17 @@
         <th class="header__title">Nome</th>
         <th class="header__title">Email</th>
         <th class="header__title">Cargo</th>
+        <th class="header__title">Coordenador</th>
         <th class="header__title">Status</th>
         <th class="header__title">Ação</th>
     </thead>
     <tbody class="table__body">
-        <tr class="body__item">
-            <td>Ioe</td>
-            <td>Ioe</td>
-            <td>Ioe</td>
-            <td>Ioe</td>
-            <td>
-                <a class="action-icon"><i class="far fa-edit"></i></a>
-                <a class="action-icon"><i class="far fa-trash-alt"></i></a>
-            </td>
-        </tr>
-        <tr class="body__item">
-            <td>Ioe</td>
-            <td>Ioe</td>
-            <td>Ioe</td>
-            <td>Ioe</td>
-            <td>
-                <a class="action-icon"><i class="far fa-edit"></i></a>
-                <a class="action-icon"><i class="far fa-trash-alt"></i></a>
-            </td>
-        </tr>
-        <tr class="body__item">
-            <td>Ioe</td>
-            <td>Ioe</td>
-            <td>Ioe</td>
-            <td>Ioe</td>
-            <td>
-                <a class="action-icon"><i class="far fa-edit"></i></a>
-                <a class="action-icon"><i class="far fa-trash-alt"></i></a>
-            </td>
-        </tr>
-        <tr class="body__item">
-            <td>Ioe</td>
-            <td>Ioe</td>
-            <td>Ioe</td>
-            <td>Ioe</td>
+        <tr class="body__item" *ngFor="let employer of employers">
+            <td>{{ employer.name }}</td>
+            <td>{{ employer.email }}</td>
+            <td>{{ employer.rule }}</td>
+            <td>{{ employer.coordinator }}</td>
+            <td>{{ employer.status == true ? 'Ativo' : 'Não ativo' }}</td>
             <td>
                 <a class="action-icon"><i class="far fa-edit"></i></a>
                 <a class="action-icon"><i class="far fa-trash-alt"></i></a>

@@ -1,4 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { EmployerService } from 'src/app/service/employer.service';
+
+import { Employer } from './../../model/employer';
 
 @Component({
   selector: 'table-content',
@@ -8,14 +11,29 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class TableContentComponent implements OnInit {
 
   @Output() addEmployer = new EventEmitter; 
+  employers:Employer[] = [];
 
-  constructor() { }
+  constructor(
+    private _employerService: EmployerService
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {  
+    this.getEmployers();
   }
 
   registerEmployerActive() {
     this.addEmployer.emit(true);
   }
+
+  getEmployers():void {
+    if(this._employerService.listEmployes.length < 0) {
+      this.employers = this._employerService.listEmployes;
+    }
+    else {
+      this._employerService.getEmployers().subscribe((response: Employer[]) => {
+        this.employers = response;
+      });
+    }
+  } 
 
 }
