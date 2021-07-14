@@ -12,6 +12,8 @@ import { Employer } from './../../model/employer';
 export class TableContentComponent implements OnInit {
 
   @Output() addEmployer = new EventEmitter; 
+  @Output() editEmployerEmmiter = new EventEmitter();
+  
   modalText?:string;
   hiddenModal: boolean = true;
   employers:Employer[] = [];
@@ -38,6 +40,7 @@ export class TableContentComponent implements OnInit {
   } 
   
   registerEmployerActive() {
+    this.editEmployerEmmiter.emit(undefined);
     this.addEmployer.emit(true);
   }
 
@@ -54,7 +57,11 @@ export class TableContentComponent implements OnInit {
           this.employers = this._employerService.listEmployes;
       });
     }
-   
+  }
+
+  editEmployer(idEmployer?:number) {
+    this.editEmployerEmmiter.emit(idEmployer);
+    this.addEmployer.emit(true);
   }
 
 }

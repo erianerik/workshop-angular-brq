@@ -1,6 +1,7 @@
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+
 import { EmployerService } from 'src/app/service/employer.service';
 import { Employer } from './../../model/employer';
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'create-update',
@@ -10,14 +11,23 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class CreateUpdateComponent implements OnInit {
 
   @Output() addEmployer = new EventEmitter();
+  @Input() idEmployer?:number; 
 
   employer: Employer = {};
+  titleAction?: string;
 
   constructor(
     private _employerService: EmployerService
   ) { }
 
   ngOnInit(): void {
+    if(this.idEmployer) {
+      this.titleAction = "Alterar Funcionário";
+    }else {
+      this.titleAction = "Cadastrar Funcionário";
+      
+    }
+    
   }
 
   addEmployerStatus() {

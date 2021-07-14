@@ -7,8 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   registerStatus = false;
+  idEmployer?:number;
 
   addEmployerStatus(event:boolean) {
     this.registerStatus = event;
+  }
+
+  editEmployer(event?:number) {
+    this.idEmployer = event;
   }
 }
