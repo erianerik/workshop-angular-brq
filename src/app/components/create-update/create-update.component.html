@@ -15,10 +15,7 @@
         
         <label for="" class="fieldset-input__name">Cordernador:</label>
         <select name="employer-coordinator" id="" class="fieldset-input__data" [(ngModel)]="employer.coordinator" >
-            <option selected disabled>Escolha um cordernador...</option>
-            <option value="Marcio Vitor Melor">Marcio Vitor Melo</option>
-            <option value="Edson Ayabe">Edson Ayabe</option>
-            <option value="Carlos Minerva">Carlos Minerva</option>
+            <option *ngFor="let coordinator of coordinators" [value]="coordinator">{{coordinator}}</option> 
         </select>
         
         <div class="fieldset-input__statis">
@@ -33,7 +30,7 @@
 
         <fieldset class="fieldset-input__actions">
             <a class="button-pattern button-pattern--white-outline" (click)="addEmployerStatus()">Cancelar</a>
-            <a class="button-pattern" (click)="registerEmployer()">Confirmar</a>
+            <a class="button-pattern" (click)="submit()">Confirmar</a>
         </fieldset>
     </fieldset>
 

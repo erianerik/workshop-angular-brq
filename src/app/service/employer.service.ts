@@ -23,6 +23,10 @@ export class EmployerService {
     return this._http.post<Employer>(this.url, employer);
   }
 
+  updateEmployer(idEmployer?: number, employer?:Employer): Observable<Employer> {
+    return this._http.put<Employer>(`${this.url}${idEmployer}/`, employer);
+  }
+
   deleteEmployer(idEmployer?:number):Observable<Employer> {
     let indexList = this.listEmployes.findIndex((employer) => employer.id == idEmployer);    
     this.listEmployes.splice(indexList, 1);

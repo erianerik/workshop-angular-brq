@@ -32,9 +32,6 @@
     background-color: transparent;
 }
 
-.fieldset-input__data option {
-    color: #3f4347;
-}
 
 ::placeholder {
     font-family: 'Montserrat', sans-serif;
@@ -44,6 +41,10 @@
 
 .fieldset-input__name--status {
     margin-bottom: 1rem;
+}
+
+.fieldset-input__data option {
+    color: #000;
 }
 
 .fieldset-input__radio {
